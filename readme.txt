@@ -25,7 +25,7 @@ All rights reserved.
 Permission is hereby granted, without written agreement and without license or royalty fees, to use, copy, modify, and distribute this code and its documentation for any purpose, provided that the copyright notice in its entirety appear in all copies of this code, and the original source of this code, the Pontificia Universidad Javeriana Sede Cali, is acknowledged in any publication that reports research using this code. The research is to be cited in the bibliography as:
 
 1) J.E Ospina-Borras and H.D. Benitez-Restrepo, "GSVD Software Release", 
-URL: XXX, 2014
+URL: https://github.com/jeospina/GSVD.git, 2014
 
 2) J.E Ospina-Borras and H.D. Benitez-Restrepo, "Non-reference assessment of sharpness in blur/noise degraded images"
 submitted
