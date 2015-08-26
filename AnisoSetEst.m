@@ -1,20 +1,7 @@
 function mp = AnisoSetEst(img, N)
-
-% This code returns a mask to identify the anisotropic patches in the test
-% image.
-% 
+% detect anisotropic patches 
 % img: input gray scale image
 % N: patch size
-% 
-% This code was taken from:
-% 
-%X. Zhu and P. Milanfar,“Automatic parameter selection for denoising 
-% algorithms using a no-reference measure of image content,” Image 
-% Processing, IEEE Transactions on, vol. 19, no. 12, pp. 3116–3132, 2010.
-%
-%Avalible online at:
-% http://www.soe.ucsc.edu/~xzhu/doc/metricq.html
-
 
 [H W] = size(img);
 
@@ -33,11 +20,17 @@ for m = 1:h
         [gx, gy] = gradient(AOI);
         G=gx+i*gy;
         ret = SVDCoherence(G);
-        co = ret(1);
+        s1 = abs(ret(1));
+        s2 = abs(ret(2));
+        
+        co = abs(s1-s2)/(s1+s2);
+        
+        if isnan(co)
+            co=0;
+        end
         
         if co > thresh
             mp(m,n) = 1;
         end
-        
     end
 end
